@@ -17,7 +17,7 @@ let connectedUsers = []
 let connectedUserCount = 0
 let connectedUserReady = {
     // example Data
-    // "boqB-ymFw5j7oZwEAAAB" : true, 
+    // "boqB-ymFw5j7oZwEAAAB" : true,
     // "BzcNyJDYGoIZhS4fAAAD" : false
 }
 
@@ -146,12 +146,12 @@ io.on('connection', (socket) => {
         console.log("................")
     })
 
-    
+
     socket.on('userTime', (userTime) => {
         console.log(`${socketID} completed in ${userTime}s`)
       // {"socketID": "AWDWAJ1EJ1", time: 0.23, name: "Alex" },
       userAssociations.push( { "socketID": socketID, time: userTime, name:"N/A"} )
-        
+
         // console.log(`readyCount = ${readyCount}; connectedUserCount = ${connectedUserCount} and userAssociations.length = ${userAssociations.length}`)
         if(userAssociations.length === 2) {
             console.log("---------------- GAME RESULTS ----------------")
@@ -176,7 +176,7 @@ io.on('connection', (socket) => {
             console.log("Resetting game...")
             userAssociations = []
         }
-        
+
     })
 
 })
@@ -184,5 +184,5 @@ io.on('connection', (socket) => {
 
 
 
-const PORT = 8000 || process.env.PORT;
+const PORT = process.env.PORT;
 server.listen(PORT, () => { console.log(`Server running on port ${PORT}`) })
