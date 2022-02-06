@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { io } from 'socket.io-client';
 
 const ENDPOINT = "localhost:8000";
-const socket = io(ENDPOINT)
+const socket = io(process.env.PORT;)
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,9 +19,9 @@ ReactDOM.render(
             <Route path='/' element={<HomePage/>}></Route>
             <Route path='/solo' element={<Offline />}></Route>
             <Route path='/multiplayer' element={<Online socket={socket}/>}></Route>
-        </Routes> 
-    </BrowserRouter>    
-    
+        </Routes>
+    </BrowserRouter>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
