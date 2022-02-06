@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { io } from 'socket.io-client';
 
 const ENDPOINT = "localhost:8000";
-const socket = io(process.env.PORT)
+const socket = io()
 
 ReactDOM.render(
   <React.StrictMode>
